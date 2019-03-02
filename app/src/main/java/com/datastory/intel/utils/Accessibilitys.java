@@ -29,7 +29,7 @@ public class Accessibilitys {
         for (int i = 0; i < root.getChildCount(); i++) {
             AccessibilityNodeInfo child = root.getChild(i);
             Log.d(TAG, String.format("%s%s(%s) %s[%s]", indent, level, i, child.getClassName(), child.getText()));
-            dfs(child, indent + "-", level + 1);
+            dfs(child, "-" + indent, level + 1);
         }
     }
 
