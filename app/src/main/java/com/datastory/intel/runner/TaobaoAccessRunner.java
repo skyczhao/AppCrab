@@ -55,7 +55,11 @@ public class TaobaoAccessRunner {
                     if (decimal != null) {
                         price += decimal;
                     }
-                    String nums = String.valueOf(child.getChild(4).getContentDescription());
+                    String nums = "";
+                    List<AccessibilityNodeInfo> payCounts = child.findAccessibilityNodeInfosByText("付款");
+                    if (payCounts.size() == 1) {
+                        nums = String.valueOf(payCounts.get(0).getText());
+                    }
 
                     System.out.println(name);
                     System.out.println(price);
