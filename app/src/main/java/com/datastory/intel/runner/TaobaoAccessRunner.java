@@ -48,19 +48,21 @@ public class TaobaoAccessRunner {
                 if (child.getChildCount() != 1) continue;
                 child = child.getChild(0);
 
-                Accessibilitys.dfs(recursiveNode, ">", 0);
+                try {
+                    String name = String.valueOf(child.getChild(0).getContentDescription());
+                    String price = child.getChild(2).getText() + "";
+                    CharSequence decimal = child.getChild(3).getText();
+                    if (decimal != null) {
+                        price += decimal;
+                    }
+                    String nums = String.valueOf(child.getChild(4).getContentDescription());
 
-                System.out.println("该node是: " + child.getClassName() + ", " + child.getChildCount());
-                for (int j = 0; j < child.getChildCount(); j++) {
-                    Log.d(TAG, String.valueOf(child.getChild(j).getClassName() + ":" + child.getChild(j).getText()));
-                }
-
-                System.out.println("找到的child是:");
-                List<AccessibilityNodeInfo> xy = child.findAccessibilityNodeInfosByText("泥");
-                for (AccessibilityNodeInfo xyy : xy) {
-                    System.out.println(xyy.getClassName() + ":" + xyy.getText());
-
-                    Accessibilitys.trace_backward(xyy);
+                    System.out.println(name);
+                    System.out.println(price);
+                    System.out.println(nums);
+                } catch (Exception e) {
+                    // skip
+//                    Log.e(TAG, "parse error", e);
                 }
             }
         }
