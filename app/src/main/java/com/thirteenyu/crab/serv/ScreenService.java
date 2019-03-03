@@ -1,4 +1,4 @@
-package com.datastory.intel.serv;
+package com.thirteenyu.crab.serv;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.ComponentName;
@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.Toast;
 
-import com.datastory.intel.runner.TaobaoAccessRunner;
+import com.thirteenyu.crab.runner.TaobaoAccessRunner;
 
 /**
  * ScreenService

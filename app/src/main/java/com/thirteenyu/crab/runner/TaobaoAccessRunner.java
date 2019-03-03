@@ -1,11 +1,8 @@
-package com.datastory.intel.runner;
+package com.thirteenyu.crab.runner;
 
 import android.accessibilityservice.AccessibilityService;
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Toast;
-
-import com.datastory.intel.utils.Accessibilitys;
 
 import java.util.List;
 

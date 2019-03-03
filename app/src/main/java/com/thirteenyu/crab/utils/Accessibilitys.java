@@ -1,4 +1,4 @@
-package com.datastory.intel.utils;
+package com.thirteenyu.crab.utils;
 
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;
